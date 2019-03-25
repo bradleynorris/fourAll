@@ -1,0 +1,67 @@
+.topContainer {
+    height: 140px;
+    border: 1px solid grey;
+    display: flex;
+}
+
+.minusL {
+    height: 100%;
+    width: 20%;
+}
+
+.timer {
+    height: 100%;
+    width: 60%;
+    border: 1px solid grey;
+    border-radius: 15px;
+    text-align: center;
+}
+
+.minusR {
+    height: 100%;
+    width: 20%;
+}
+
+.botContainer {
+    height: 215px;
+    border: 1px solid grey;
+    display: flex;
+}
+
+.bLeft {
+    height: 100%;
+    width: 33%;
+    padding: 10px;
+}
+
+.nameBadge {
+    height: 30px;
+    width: 100%;
+    text-align: center;
+    color: white;
+}
+
+.scoreL {
+    text-align: center;
+    height: 80%;
+    border: 1px solid grey;
+}
+
+.to {
+    height: 100%;
+    width: 33%;
+    text-align: center;
+    padding-top: 15%;
+}
+
+.bRight {
+    height: 100%;
+    width: 33%;
+    padding: 10px;
+}
+
+.scoreR {
+    text-align: center;
+    height: 80%;
+    border: 1px solid grey;
+}
