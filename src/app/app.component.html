@@ -1,18 +1,25 @@
 <div class="container">
   <div class="topContainer">
-    <div class="minusL"></div>
-    <div class="timer">20:00</div>
-    <div class="minusR"></div>
+    <div class="minusL" (click)="minusOneL()"></div>
+    <div class="timerContainer bg-success">
+      <p class="timerText">{{ timerStart }}</p>
+      <div class="row">
+        <button (click)="countDown()"><i class="fas fa-play"></i></button>
+        <button><i class="fas fa-pause"></i></button>
+        <button (click)="reset()"><i class="fas fa-redo"></i></button>
+      </div>
+    </div>
+    <div class="minusR" (click)="minusOneR()"></div>
   </div>
   <div class="botContainer">
     <div class="bLeft">
       <div class="nameBadge badge badge-danger">OWLS</div>
-      <div class="scoreL">2</div>
+      <div class="scoreL" (click)="addOneL()">{{scoreL}}</div>
     </div>
     <p class="to">to</p>
     <div class="bRight">
       <div class="nameBadge badge badge-info">NASA</div>
-      <div class="scoreR">1</div>
+      <div class="scoreR" (click)="addOneR()">{{scoreR}}</div>
     </div>
   </div>
 </div>
