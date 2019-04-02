@@ -10,39 +10,10 @@
     width: 20%;
 }
 
-.timerContainer {
+app-timer {
     height: 100%;
     width: 60%;
-    border-radius: 15px;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    color: white;
 }
-
-.timerText {
-    font-size: 28vh;
-    padding: 0px;
-    margin: 0px;
-}
-
-.row{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    padding: 0px 25px 0px 25px;
-}
-
-.fas {
-    font-size: 15px;
-    color: white;
-}
-
-button {
-    background-color: transparent;
-    border: 0;
-}
-
 
 .minusR {
     height: 100%;
@@ -65,7 +36,6 @@ button {
     width: 100%;
     text-align: center;
     vertical-align: middle;
-    color: white;
 }
 
 .scoreL {
@@ -74,12 +44,25 @@ button {
     height: 80%;
 }
 
-.to {
+.botMidCont {
     height: 100%;
     width: 33%;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.to {
+    height: 70%;
+    text-align: center;
     vertical-align: middle;
     font-size: 50px;
+    margin: 0;
+}
+
+.refresh {
+    height: 20%;
 }
 
 .bRight {
@@ -93,3 +76,4 @@ button {
     font-size: 100px;
     height: 80%;
 }
+

@@ -1,24 +1,42 @@
-<div class="container">
+<!-- Main container for everything -->
+<div class="container"> 
+  <!-- Top half with two invisible buttons and the timer component -->
   <div class="topContainer">
     <div class="minusL" (click)="minusOneL()"></div>
-    <div class="timerContainer bg-success">
-      <p class="timerText">{{ timerStart }}</p>
-      <div class="row">
-        <button (click)="countDown()"><i class="fas fa-play"></i></button>
-        <button><i class="fas fa-pause"></i></button>
-        <button (click)="reset()"><i class="fas fa-redo"></i></button>
-      </div>
-    </div>
+    <app-timer #counter></app-timer>
     <div class="minusR" (click)="minusOneR()"></div>
   </div>
+  <!-- Bottom half with team info and scores -->
   <div class="botContainer">
     <div class="bLeft">
-      <div class="nameBadge badge badge-danger">OWLS</div>
+      <!-- form to assign name and color to left team -->
+      <form #teamFormL="ngForm" (ngSubmit)="submitTeam(teamFormL.form);" [hidden]="teamFormL.submitted" >
+          <input type="text" class="form-control" placeholder="enter team name..." name="team-name-l" ngModel #nameFieldL="ngModel">
+          <select class="form-control" name="team-color-l" aria-placeholder="select color..." ngModel #teamColorL="ngModel" required>
+            <option value="" disabled selected>team color...</option>
+            <option *ngFor="let color of colors" [value]="color.id">{{color.name}}</option>
+          </select>
+          <button class="btn btn-primary" [disabled]="!teamFormL.valid">Submit</button>
+        </form>  
+      <div *ngIf="nameFieldL.touched" class="nameBadge badge badge-{{ teamColorL.value }}">{{nameFieldL.value | uppercase}}</div>
       <div class="scoreL" (click)="addOneL()">{{scoreL}}</div>
     </div>
-    <p class="to">to</p>
+    <!-- middle bottom with "to" and button to refresh the whole page -->
+    <div class="botMidCont">
+      <p class="to">to</p>
+      <button class="refresh" (click)="refresh()"><i class="fas fa-redo"></i></button>
+    </div>  
     <div class="bRight">
-      <div class="nameBadge badge badge-info">NASA</div>
+      <!-- form to assign name and color to right team -->
+      <form #teamFormR="ngForm" (ngSubmit)="submitTeam(teamFormR.form);" [hidden]="teamFormR.submitted" >
+        <input type="text" class="form-control" placeholder="enter team name..." name="team-name-r" ngModel #nameFieldR="ngModel">
+          <select class="form-control" name="team-color-r" aria-placeholder="select color..." ngModel #teamColorR="ngModel" required>
+            <option value="" disabled selected>team color...</option>
+            <option *ngFor="let color of colors" [value]="color.id">{{color.name}}</option>
+          </select>
+          <button class="btn btn-primary" [disabled]="!teamFormR.valid">Submit</button>
+        </form> 
+      <div *ngIf="nameFieldR.touched" class="nameBadge badge badge-{{ teamColorR.value }}">{{ nameFieldR.value | uppercase }}</div>
       <div class="scoreR" (click)="addOneR()">{{scoreR}}</div>
     </div>
   </div>

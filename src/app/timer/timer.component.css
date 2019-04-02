@@ -1,0 +1,32 @@
+.timerContainer {
+    height: 100%;
+    width: 100%;
+    border-radius: 15px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    color: white;
+}
+
+.timerText {
+    font-size: 28vh;
+    padding: 0px;
+    margin: 0px;
+}
+
+.row{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0px 25px 0px 25px;
+}
+
+.fas {
+    font-size: 15px;
+    color: white;
+}
+
+button {
+    background-color: transparent;
+    border: 0;
+}
