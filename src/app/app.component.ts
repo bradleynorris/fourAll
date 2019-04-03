@@ -55,6 +55,9 @@ export class AppComponent implements OnInit{
     this.counter.counterState.subscribe(state=>{
       if (state === 'COMPLETE') {
         alert('TIME IS UP'); // add winner logic
+      } else if (state === 'ABORTED') {
+        console.log('paused');
+        // pause logic
       }
     })
   }

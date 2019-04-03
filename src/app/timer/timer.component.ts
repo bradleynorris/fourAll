@@ -48,6 +48,7 @@ export class TimerComponent implements OnInit {
 
   public pauseTimer() {
     this.currentSubscription.unsubscribe();
+    this.counterState.emit('ABORTED');
   }
 
   resetTimer() {

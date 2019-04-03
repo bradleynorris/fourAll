@@ -63,6 +63,8 @@ app-timer {
 
 .refresh {
     height: 20%;
+    background-color: transparent;
+    border: none;
 }
 
 .bRight {
