@@ -17,12 +17,12 @@ export class TimerComponent implements OnInit {
   @Output()
   counterState = new EventEmitter<string>();
 
-  currentValue = '';
+  currentValue = '20:00';
   currentSubscription: Subscription;
 
   constructor(private changeDetector : ChangeDetectorRef) { }
 
-  ngOnInit() {
+  ngOnInit() {    
   }
 
   public start() {
@@ -37,18 +37,24 @@ export class TimerComponent implements OnInit {
       this.counterState.error(err);
     }, ()=>{
       this.currentValue = '00:00';
-      this.counterState.emit('COMPLETE');
+      this.counterState.emit('COMPLETE'); 
       this.changeDetector.detectChanges();
     });
   }
-
-  public stop() {
-    this.currentSubscription.unsubscribe();
-    this.counterState.emit('ABORTED');
+  
+  startTimer() {
+      this.start();
   }
 
+  public pauseTimer() {
+    this.currentSubscription.unsubscribe();
+  }
 
+  resetTimer() {
+    this.start();
+  }
 
+// Converting seconds to Min:Sec format
   private formatValue(v) {
     const minutes = Math.floor(v/60);
     const formattedMinutes = (minutes > 9? minutes : '0' + minutes);
@@ -58,17 +64,4 @@ export class TimerComponent implements OnInit {
 
     return `${formattedMinutes}:${formattedSeconds}`;
   }
-
-  startTimer() {
-
-  }
-
-  pauseTimer() {
-
-  }
-
-  resetTimer() {
-    
-  }
-
 }
