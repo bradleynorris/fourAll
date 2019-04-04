@@ -51,10 +51,10 @@ export class AppComponent implements OnInit{
   }
 
   ngOnInit () {
-    this.counter.startAt = 1200;
+    this.counter.startAt = 120;
     this.counter.counterState.subscribe(state=>{
       if (state === 'COMPLETE') {
-        alert('TIME IS UP'); // add winner logic
+        this.counter.badgeColor = 'danger';
       } else if (state === 'ABORTED') {
         console.log('paused');
         // pause logic

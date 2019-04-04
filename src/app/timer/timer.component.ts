@@ -17,7 +17,8 @@ export class TimerComponent implements OnInit {
   @Output()
   counterState = new EventEmitter<string>();
 
-  currentValue = '20:00';
+  badgeColor: string = 'success';
+  currentValue = '02:00';
   currentSubscription: Subscription;
 
   constructor(private changeDetector : ChangeDetectorRef) { }

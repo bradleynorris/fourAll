@@ -19,7 +19,7 @@
           <button class="btn btn-primary" [disabled]="!teamFormL.valid">Submit</button>
         </form>  
       <div *ngIf="nameFieldL.touched" class="nameBadge badge badge-{{ teamColorL.value }}">{{nameFieldL.value | uppercase}}</div>
-      <div class="scoreL" (click)="addOneL()">{{scoreL}}</div>
+      <div class="scoreL" (click)="addOneL()" [hidden]="!teamFormL.valid">{{scoreL}}</div>
     </div>
     <!-- middle bottom with "to" and button to refresh the whole page -->
     <div class="botMidCont">
@@ -37,7 +37,7 @@
           <button class="btn btn-primary" [disabled]="!teamFormR.valid">Submit</button>
         </form> 
       <div *ngIf="nameFieldR.touched" class="nameBadge badge badge-{{ teamColorR.value }}">{{ nameFieldR.value | uppercase }}</div>
-      <div class="scoreR" (click)="addOneR()">{{scoreR}}</div>
+      <div class="scoreR" (click)="addOneR()" [hidden]="!teamFormR.valid">{{scoreR}}</div>
     </div>
   </div>
 </div>
